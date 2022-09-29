@@ -1,0 +1,126 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentação Desafio Newtail",
+        "description": "Essa é uma documentação desenvolvida para o desafio da Newtail",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/houses": {
+            "post": {
+                "tags": [
+                    "House"
+                ],
+                "sumarry": "Registrar uma nova casa",
+                "description": "Realiza o registro de uma nova casa na aplicação",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "region": {
+                                        "type": "string"
+                                    },
+                                    "founded_in": {
+                                        "type": "number"
+                                    },
+                                    "lord_name": {
+                                        "type": "string"
+                                    },
+                                    "lord_seasons": {
+                                        "type": "array"
+                                    }
+                                },
+                                "example": {
+                                    "name": "Aegon Targaryen",
+                                    "region": "King's Landing",
+                                    "founded_in": 0,
+                                    "lord_name": "Bran Stark",
+                                    "lord_seaons": [
+                                        "Season 1",
+                                        "Season 2"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "House created successfully"
+                    },
+                    "400": {
+                        "description": "House already exists"
+                    }
+                }
+            },
+            "get": {
+                "tags": [
+                    "House"
+                ],
+                "sumarry": "Buscar Casas",
+                "description": "Realiza a busca de casas na base. É possível filtrar pelo nome e Id das casas.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da casa a ser procurada",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "name",
+                        "in": "path",
+                        "description": "Nome da casa a ser procurada",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "path",
+                        "description": "Pagina da lista de casas",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "path",
+                        "description": "Limite por página na lista de casas",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Casas listadas"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "House"
+                ],
+                "sumarry": "Remover uma Casa",
+                "description": "Realiza a remoção de uma casa",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID da casa a ser removida",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "House removed successfully"
+                    }
+                }
+            }
+        }
+    }
+}
