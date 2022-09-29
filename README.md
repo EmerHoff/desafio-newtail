@@ -9,10 +9,10 @@ O projeto deve funcionar independente do editor de texto usado, mas eu recomento
 
 - A API deve ser REST
 - Para cada casa, os seguintes dados devem ser obtidos do banco de dados da aplicação, sendo inseridos individualmente:
-    -- Nome
-    -- Região
-    -- Ano de fundação
-    -- Atual Lord (Nas Informações do lord da casa, devemos armazenar em que temporadas esse personagem apareceu).
+    - Nome
+    - Região
+    - Ano de fundação
+    - Atual Lord (Nas Informações do lord da casa, devemos armazenar em que temporadas esse personagem apareceu).
 
 - Funcionalidades desejadas:
     - Adicionar uma casa (com nome, região, ano de fundação e atual lord) - Listar casas
